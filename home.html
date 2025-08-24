@@ -13,6 +13,12 @@
 			rel="stylesheet"
 		/>
 
+		<!-- Font Awesome CDN -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+		/>
+
 		<!-- Daisyui CDN -->
 		<link
 			href="https://cdn.jsdelivr.net/npm/daisyui@5"
@@ -28,9 +34,377 @@
 			}
 		</style>
 	</head>
-	<body class="bg-[#F4F5F7] h-screen">
-		<main
-			class="max-w-[450px] mx-auto h-screen flex flex-col items-center justify-center px-6 border-2 border-green-600"
-		></main>
+	<body class="bg-[#F4F5F7]">
+		<main class="max-w-[450px] mx-auto min-h-screen">
+			<div
+				class="pt-11 px-6 pb-[18px] flex items-center justify-between border-b-[1px] border-b-[rgba(8,8,8,0.10)] bg-white"
+			>
+				<div class="flex gap-x-2 items-center">
+					<img src="images/main-logo.png" alt="" />
+					<div>
+						<h3
+							class="text-[rgba(8,8,8,0.90)] text-[18px] font-extrabold"
+						>
+							$ <span id="total-amount">45000</span>
+						</h3>
+						<p
+							class="text-[rgba(8,8,8,0.50)] text-[14px] font-normal"
+						>
+							Available Balance
+						</p>
+					</div>
+				</div>
+				<div>
+					<button
+						class="border-[1px] border-[rgba(8,8,8,0.10)] rounded-lg py-[9px] px-3 text-[rgba(8,8,8,0.50)] text-[14px] font-normal cursor-pointer"
+					>
+						<i
+							class="fa-solid fa-arrow-right-from-bracket -rotate-[180deg] mr-1"
+						></i>
+						Log Out
+					</button>
+				</div>
+			</div>
+
+			<div class="bg-white pt-8 pr-6 pb-6 pl-6 rounded-[0_0_24px_24px]">
+				<h2 class="text-[24px] text-[#080808] font-bold mb-3">
+					🔥 Welcome to Payooo!
+				</h2>
+				<p class="text-[rgba(8,8,8,0.50)] text-[16px] font-normal mb-6">
+					Enjoy easy and convenient financial services with us.
+					Cashout charge is low and
+				</p>
+				<div class="grid grid-cols-3 gap-4">
+					<!-- Single Button Card -->
+					<div
+						class="py-5 px-[10px] border-[1px] border-[rgba(8,8,8,0.10)] rounded-xl cursor-pointer"
+					>
+						<img
+							class="block mx-auto"
+							src="images/add-money-icon.png"
+							alt=""
+						/>
+						<p
+							class="text-[14px] text-center text-[rgba(8,8,8,0.70)] font-medium mt-2"
+						>
+							Add Money
+						</p>
+					</div>
+					<!-- Single Button Card -->
+					<div
+						class="py-5 px-[10px] border-[1px] border-[rgba(8,8,8,0.10)] rounded-xl cursor-pointer"
+					>
+						<img
+							class="block mx-auto"
+							src="images/cash-out-icon.png"
+							alt=""
+						/>
+						<p
+							class="text-[14px] text-center text-[rgba(8,8,8,0.70)] font-medium mt-2"
+						>
+							Cashout
+						</p>
+					</div>
+					<!-- Single Button Card -->
+					<div
+						class="py-5 px-[10px] border-[1px] border-[rgba(8,8,8,0.10)] rounded-xl cursor-pointer"
+					>
+						<img
+							class="block mx-auto"
+							src="images/transfer-money-icon.png"
+							alt=""
+						/>
+						<p
+							class="text-[14px] text-center text-[rgba(8,8,8,0.70)] font-medium mt-2"
+						>
+							Transfer Money
+						</p>
+					</div>
+					<!-- Single Button Card -->
+					<div
+						class="py-5 px-[10px] border-[1px] border-[rgba(8,8,8,0.10)] rounded-xl cursor-pointer"
+					>
+						<img
+							class="block mx-auto"
+							src="images/get-bonus-iocn.png"
+							alt=""
+						/>
+						<p
+							class="text-[14px] text-center text-[rgba(8,8,8,0.70)] font-medium mt-2"
+						>
+							Get Bonus
+						</p>
+					</div>
+					<!-- Single Button Card -->
+					<div
+						class="py-5 px-[10px] border-[1px] border-[rgba(8,8,8,0.10)] rounded-xl cursor-pointer"
+					>
+						<img
+							class="block mx-auto"
+							src="images/pay-bill-icon.png"
+							alt=""
+						/>
+						<p
+							class="text-[14px] text-center text-[rgba(8,8,8,0.70)] font-medium mt-2"
+						>
+							Pay Bill
+						</p>
+					</div>
+					<!-- Single Button Card -->
+					<div
+						class="py-5 px-[10px] border-[1px] border-[rgba(8,8,8,0.10)] rounded-xl cursor-pointer"
+					>
+						<img
+							class="block mx-auto"
+							src="images/transactions-icon.png"
+							alt=""
+						/>
+						<p
+							class="text-[14px] text-center text-[rgba(8,8,8,0.70)] font-medium mt-2"
+						>
+							Transactions
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!--  -->
+			<div class="pt-8 pr-6 pb-16 pl-6">
+				<!-- Latest Payment -->
+				<div class="hidden">
+					<div class="flex items-center justify-between mb-4">
+						<p
+							class="text-[rgba(8,8,8,0.90)] text-[18px] font-semibold"
+						>
+							Latest Payment
+						</p>
+						<button
+							class="text-[rgba(8,8,8,0.50)] text-[14px] font-medium border-none cursor-pointer"
+						>
+							View All
+						</button>
+					</div>
+
+					<div class="flex flex-col gap-y-3">
+						<!-- Single History -->
+						<div
+							class="border-[1px] border-[rgba(8,8,8,0.10)] rounded-xl bg-white py-[13px] px-4 flex items-center justify-between"
+						>
+							<div class="flex items-center gap-x-2">
+								<div
+									class="w-[45.5px] h-[45.5px] rounded-full bg-[rgba(8,8,8,0.05)] flex items-center justify-center"
+								>
+									<img
+										src="images/add-money-icon.png"
+										alt=""
+									/>
+								</div>
+								<div class="flex flex-col">
+									<p
+										class="text-[rgba(8,8,8,0.70)] text-[16px] leading-normal font-semibold"
+									>
+										Electricity Bill
+									</p>
+									<span
+										class="text-[rgba(8,8,8,0.70)] text-[12px] leading-normal font-medium"
+										>Today 01:44 AM</span
+									>
+								</div>
+							</div>
+							<div>
+								<i
+									class="fa-solid fa-ellipsis-vertical cursor-pointer"
+								></i>
+							</div>
+						</div>
+						<!-- Single History -->
+						<div
+							class="border-[1px] border-[rgba(8,8,8,0.10)] rounded-xl bg-white py-[13px] px-4 flex items-center justify-between"
+						>
+							<div class="flex items-center gap-x-2">
+								<div
+									class="w-[45.5px] h-[45.5px] rounded-full bg-[rgba(8,8,8,0.05)] flex items-center justify-center"
+								>
+									<img
+										src="images/add-money-icon.png"
+										alt=""
+									/>
+								</div>
+								<div class="flex flex-col">
+									<p
+										class="text-[rgba(8,8,8,0.70)] text-[16px] leading-normal font-semibold"
+									>
+										Electricity Bill
+									</p>
+									<span
+										class="text-[rgba(8,8,8,0.70)] text-[12px] leading-normal font-medium"
+										>Today 01:44 AM</span
+									>
+								</div>
+							</div>
+							<div>
+								<i
+									class="fa-solid fa-ellipsis-vertical cursor-pointer"
+								></i>
+							</div>
+						</div>
+						<!-- Single History -->
+						<div
+							class="border-[1px] border-[rgba(8,8,8,0.10)] rounded-xl bg-white py-[13px] px-4 flex items-center justify-between"
+						>
+							<div class="flex items-center gap-x-2">
+								<div
+									class="w-[45.5px] h-[45.5px] rounded-full bg-[rgba(8,8,8,0.05)] flex items-center justify-center"
+								>
+									<img
+										src="images/add-money-icon.png"
+										alt=""
+									/>
+								</div>
+								<div class="flex flex-col">
+									<p
+										class="text-[rgba(8,8,8,0.70)] text-[16px] leading-normal font-semibold"
+									>
+										Electricity Bill
+									</p>
+									<span
+										class="text-[rgba(8,8,8,0.70)] text-[12px] leading-normal font-medium"
+										>Today 01:44 AM</span
+									>
+								</div>
+							</div>
+							<div>
+								<i
+									class="fa-solid fa-ellipsis-vertical cursor-pointer"
+								></i>
+							</div>
+						</div>
+						<!-- Single History -->
+						<div
+							class="border-[1px] border-[rgba(8,8,8,0.10)] rounded-xl bg-white py-[13px] px-4 flex items-center justify-between"
+						>
+							<div class="flex items-center gap-x-2">
+								<div
+									class="w-[45.5px] h-[45.5px] rounded-full bg-[rgba(8,8,8,0.05)] flex items-center justify-center"
+								>
+									<img
+										src="images/add-money-icon.png"
+										alt=""
+									/>
+								</div>
+								<div class="flex flex-col">
+									<p
+										class="text-[rgba(8,8,8,0.70)] text-[16px] leading-normal font-semibold"
+									>
+										Electricity Bill
+									</p>
+									<span
+										class="text-[rgba(8,8,8,0.70)] text-[12px] leading-normal font-medium"
+										>Today 01:44 AM</span
+									>
+								</div>
+							</div>
+							<div>
+								<i
+									class="fa-solid fa-ellipsis-vertical cursor-pointer"
+								></i>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ADD MONEY FORM -->
+				<div>
+					<div class="mb-4">
+						<p
+							class="text-[rgba(8,8,8,0.90)] text-[18px] font-semibold"
+						>
+							Add Money
+						</p>
+					</div>
+					<div class="p-6 bg-white rounded-3xl">
+						<form class="flex flex-col gap-y-4">
+							<!-- Single Input Row -->
+							<div>
+								<label
+									class="text-[16px] text-[rgba(8,8,8,0.70)] font-medium mb-3 block"
+								>
+									Select A Bank
+								</label>
+								<div
+									class="py-2 px-2 bg-[#F4F5F7] rounded-[32px]"
+								>
+									<select
+										id="bank"
+										class="select w-full bg-transparent text-[#080808] text-[16px] font-[300] outline-none border-none focus:outline-none focus:ring-0 focus:border-0"
+									>
+										<option selected>Select back</option>
+										<option>
+											Datch Bangla Bank PLC Ltd.
+										</option>
+										<option>
+											Islami Bank Bangladesh PLC Ltd.
+										</option>
+										<option>National Bank PLC Ltd.</option>
+									</select>
+								</div>
+							</div>
+							<!-- Single Input Row -->
+							<div>
+								<label
+									class="text-[16px] text-[rgba(8,8,8,0.70)] font-medium mb-3 block"
+								>
+									Bank Account Number
+								</label>
+								<input
+									class="text-[16px] text-[#080808] font-[300] py-4 px-6 bg-[#F4F5F7] rounded-[32px] border-none focus:outline-none w-full"
+									type="text"
+									id="account-number"
+									placeholder="Enter 11 digit account number"
+								/>
+							</div>
+							<!-- Single Input Row -->
+							<div>
+								<label
+									class="text-[16px] text-[rgba(8,8,8,0.70)] font-medium mb-3 block"
+								>
+									Amount to Add
+								</label>
+								<input
+									class="text-[16px] text-[#080808] font-[300] py-4 px-6 bg-[#F4F5F7] rounded-[32px] border-none focus:outline-none w-full"
+									type="text"
+									id="add-amount"
+									placeholder="Add Amount"
+								/>
+							</div>
+							<!-- Single Input Row -->
+							<div>
+								<label
+									class="text-[16px] text-[rgba(8,8,8,0.70)] font-medium mb-3 block"
+								>
+									Pin Number
+								</label>
+								<input
+									class="text-[16px] text-[#080808] font-[300] py-4 px-6 bg-[#F4F5F7] rounded-[32px] border-none focus:outline-none w-full"
+									type="text"
+									id="pin-number"
+									placeholder="Enter 4 digit pin number"
+								/>
+							</div>
+							<div>
+								<button
+									id="add-money-btn"
+									class="text-white text-[20px] font-semibold py-[14px] bg-[#0874F2] w-full rounded-[32px] cursor-pointer"
+								>
+									Add Money
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<script src="./add-balance.js"></script>
 	</body>
 </html>
