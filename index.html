@@ -58,6 +58,7 @@
 				</div>
 				<div>
 					<button
+						id="login-btn"
 						class="text-white text-[20px] font-semibold py-[14px] bg-[#0874F2] w-full rounded-[32px] cursor-pointer"
 					>
 						Login
@@ -65,5 +66,51 @@
 				</div>
 			</form>
 		</main>
+		<script>
+			document
+				.getElementById("login-btn")
+				.addEventListener("click", function (e) {
+					e.preventDefault();
+					const userMobileNumber = "01701028688";
+					const userPinNumber = 2868;
+					// Mobile Number Code
+					const mobileNumberStr =
+						document.getElementById("mobileNumber").value;
+					let mobileNumber;
+					// Validation
+					if (mobileNumberStr.length === 11) {
+						mobileNumber = parseInt(mobileNumberStr);
+					} else {
+						alert("Invalid Mobile Number");
+						return;
+					}
+
+					// Pin Number Code
+					const pinNumberStr =
+						document.getElementById("pinNumber").value;
+					let pinNumber;
+					// Validation
+					if (pinNumberStr.length === 4) {
+						pinNumber = parseInt(pinNumberStr);
+					} else {
+						alert("Invalid Pin Number.");
+						return;
+					}
+
+					// Match Login Information
+					if (
+						parseInt(userMobileNumber) == mobileNumber &&
+						userPinNumber == pinNumber
+					) {
+						window.location.href = "home.html";
+					} else {
+						alert("use: 01701028688 & 2868.");
+						return;
+					}
+
+					document.getElementById("mobileNumber").value = "";
+					document.getElementById("pinNumber").value = "";
+				});
+		</script>
 	</body>
 </html>
